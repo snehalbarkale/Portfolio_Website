@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Contact Info</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+  {% include "header.html" %}
+
+<section class="contact-section">
+  <div class="container text-center">
+    <h2>📬 Get in Touch</h2>
+    <p>Have a question, idea, or just want to say hello? I'm all ears!</p>
+
+    <form method="post" action="/send-message" class="mt-4">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="col-md-6">
+          <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+        </div>
+      </div>
+
+      <textarea class="form-control mb-3" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+    <div class="mt-5">
+      <p><strong>Email:</strong> snehalbarakle100daysofcode@gmail.com</p>
+      <p><strong>Phone:</strong> +91-9876543210</p>
+      <p>
+        <a href="https://github.com/yourusername" target="https://github.com/snehalbarkale">GitHub</a> |
+        <a href="https://linkedin.com/in/yourusername" target="https://www.linkedin.com/in/snehal-barkale-b012b5374/">LinkedIn</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- 🔹 Footer -->
+  <footer class="text-center text-muted py-4">
+    &copy; {{ current_year }} Snehal Barkale | <a href="/contact">Contact</a>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

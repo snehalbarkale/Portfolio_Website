@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  {% include "header.html" %}
+
+  <section class="resume-section">
+    <div class="content container">
+      <h1 class="resume-title mb-4">📝 My Resume</h1>
+      <a href="{{ url_for('static', filename='resume.pdf') }}" class="btn btn-primary mb-4" download>
+        ⬇️ Download Resume
+      </a>
+
+      <p>Passionate Python Developer with hands-on experience in building web apps using Flask...</p>
+
+      <div class="row mt-5 justify-content-center">
+        <div class="col-md-6 text-start">
+          <h4>💻 Technical Skills</h4>
+          <ul>
+            <li>Python, Flask, SQLAlchemy</li>
+            <li>HTML, CSS, Bootstrap</li>
+            <li>Git & GitHub, API Integration</li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-start">
+          <h4>🌸 Soft Skills</h4>
+          <ul>
+            <li>Problem-solving</li>
+            <li>Time Management</li>
+            <li>Team Collaboration</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-4 text-start">
+        <h4>🎓 Education</h4>
+        <p>Artificial Intelligence And Machine Learning Engineer – Mumbai University (2023–2026)</p>
+
+        <h4 class="mt-4">🚀 Projects</h4>
+        <p><strong>Morse Code Converter:</strong> Text-to-Morse and back using Python</p>
+        <p><strong>Portfolio Website:</strong> Built with Flask, Bootstrap, and custom CSS</p>
+
+        <h4 class="mt-4">📞 Contact</h4>
+        <p>Email: snehal@gmail.com</p>
+        <p>Phone: +91-9876543210</p>
+      </div>
+    </div>
+  </section>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="container mt-3">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+</body>
+</html>
