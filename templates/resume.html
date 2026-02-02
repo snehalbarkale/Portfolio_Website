@@ -2,73 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Resume</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Bootstrap CSS -->
+  <title>Resume | Snehal Barkale</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
-  {% include "header.html" %}
+<section class="resume-page">
+  <div class="resume-wrapper">
 
-  <section class="resume-section">
-    <div class="content container">
-      <h1 class="resume-title mb-4">📝 My Resume</h1>
-      <a href="{{ url_for('static', filename='resume.pdf') }}" class="btn btn-primary mb-4" download>
-        ⬇️ Download Resume
-      </a>
-
-      <p>Passionate Python Developer with hands-on experience in building web apps using Flask...</p>
-
-      <div class="row mt-5 justify-content-center">
-        <div class="col-md-6 text-start">
-          <h4>💻 Technical Skills</h4>
-          <ul>
-            <li>Python, Flask, SQLAlchemy</li>
-            <li>HTML, CSS, Bootstrap</li>
-            <li>Git & GitHub, API Integration</li>
-          </ul>
-        </div>
-        <div class="col-md-6 text-start">
-          <h4>🌸 Soft Skills</h4>
-          <ul>
-            <li>Problem-solving</li>
-            <li>Time Management</li>
-            <li>Team Collaboration</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="mt-4 text-start">
-        <h4>🎓 Education</h4>
-        <p>Artificial Intelligence And Machine Learning Engineer – Mumbai University (2023–2026)</p>
-
-        <h4 class="mt-4">🚀 Projects</h4>
-        <p><strong>Morse Code Converter:</strong> Text-to-Morse and back using Python</p>
-        <p><strong>Portfolio Website:</strong> Built with Flask, Bootstrap, and custom CSS</p>
-
-        <h4 class="mt-4">📞 Contact</h4>
-        <p>Email: snehal@gmail.com</p>
-        <p>Phone: +91-9876543210</p>
-      </div>
+    <div class="resume-header">
+      <h1>Snehal Barkale</h1>
+      <p>
+        Aspiring AI & Software Engineer with hands-on experience in Python, Flask, and automation.
+        Passionate about building real-world applications and production-ready systems.
+      </p>
+      <a href="/static/resume.pdf" class="btn btn-primary"> Download Resume</a>
     </div>
-  </section>
 
-  {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      <div class="container mt-3">
-        {% for category, message in messages %}
-          <div class="alert alert-{{ category }}" role="alert">
-            {{ message }}
-          </div>
-        {% endfor %}
+    <div class="resume-grid">
+
+      <div class="resume-left">
+        <h3>💻 Technical Skills</h3>
+        <ul>
+          <li>Python, Flask</li>
+          <li>HTML, CSS, JavaScript, Bootstrap</li>
+          <li>Git & GitHub</li>
+          <li>Web Scraping (BeautifulSoup, Requests)</li>
+          <li>REST APIs & Sessions</li>
+          <li>Basic Machine Learning</li>
+        </ul>
+
+        <h3>🌸 Soft Skills</h3>
+        <ul>
+          <li>Problem Solving</li>
+          <li>Time Management</li>
+          <li>Team Collaboration</li>
+          <li>Logical Thinking</li>
+        </ul>
+
+        <h3>🎓 Education</h3>
+        <p>
+          <strong>B.E. – AI & Machine Learning</strong><br>
+          Mumbai University (2023 – 2026)
+        </p>
       </div>
-    {% endif %}
-  {% endwith %}
+
+      <div class="resume-right">
+        <h3>🚀 Projects</h3>
+
+        <div class="project">
+          <h4>Amazon Price Tracker (Python)</h4>
+          <p>Automated Amazon price monitoring with email alerts.</p>
+          <a href="https://github.com/snehalbarkale/amazon-price-tracker" target="_blank">GitHub ↗</a>
+        </div>
+
+        <div class="project">
+          <h4>Typing Speed Tester</h4>
+          <p>Live timer, WPM & accuracy calculation.</p>
+          <a href="https://github.com/snehalbarkale/Typing_Speed_Tester" target="_blank">GitHub ↗</a>
+        </div>
+
+        <div class="project">
+          <h4>Tic Tac Toe</h4>
+          <p>Single & two-player game with AI logic.</p>
+          <a href="https://github.com/snehalbarkale/Tic_Tac_Toe" target="_blank">GitHub ↗</a>
+        </div>
+
+        <h3>📞 Contact</h3>
+        <p>Email: snehal.barkale04@gmail.com</p>
+        <p>GitHub: <a href="https://github.com/snehalbarkale">github.com/snehalbarkale</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 </body>
 </html>

@@ -111,3 +111,57 @@ body {
   border-radius: 30px;
 
 }
+.resume-page {
+  background: linear-gradient(120deg, #e6f2ff, #f8fbff);
+  padding: 120px 20px;
+}
+
+.resume-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 50px;
+}
+
+.resume-left ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resume-left ul li {
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.resume-left ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #0d6efd;
+}
+
+.project {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 900px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
